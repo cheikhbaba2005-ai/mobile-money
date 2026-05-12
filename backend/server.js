@@ -18,6 +18,10 @@ app.use(cors({
 }));
 app.use(express.json());
 
+// ---- Servir les fichiers statiques du frontend (pour la production) ----
+const path = require('path');
+app.use(express.static(path.join(__dirname, '..', 'frontend')));
+
 // -------------------------------
 // Middleware de sécurité
 // -------------------------------
