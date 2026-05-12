@@ -6,7 +6,7 @@ const CONFIG = {
   currency: 'XOF',
   clientName: 'Cheikh Baba',
   // URL du backend (doit être l'URL ngrok du port 3001, pas localhost)
-  apiBaseUrl: 'https://ton-app.onrender.com',
+  apiBaseUrl: 'https://mobile-money-api.onrender.com',
   authToken: 'a7f1c4e9d2b85a03f6e7c0d1a4b5e6f7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3',
 };
 
