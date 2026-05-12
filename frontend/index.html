@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Paiement Mobile Money</title>
+  <!-- Police moderne Inter depuis Google Fonts (optionnelle) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <main class="payment-card">
+    <!-- 
+      =============================================
+      EN-TÊTE : Client + Montant
+      =============================================
+    -->
+    <div class="card-header">
+      <div class="header-icon">
+        <!-- Icône cadenas pour rassurer -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          <circle cx="12" cy="16" r="1"/>
+        </svg>
+        <span>Paiement sécurisé</span>
+      </div>
+      <h1 class="client-name" id="clientName">Cheikh Baba</h1>
+      <div class="amount-container">
+        <span class="amount" id="amountDisplay">10 000</span>
+        <span class="currency">XOF</span>
+      </div>
+      <p class="subtitle">Choisissez votre méthode de paiement</p>
+    </div>
+
+    <!-- 
+      =============================================
+      MOYENS DE PAIEMENT
+      =============================================
+    -->
+    <div class="payment-methods">
+      <div class="methods-grid">
+        <!-- Wave -->
+        <button class="method-btn" data-method="wave">
+          <div class="method-icon wave-icon">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="20" fill="#1E90FF"/>
+              <path d="M12 20c0 0 3-6 8-6s8 6 8 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M14 22c0 0 2-4 6-4s6 4 6 4" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+            </svg>
+          </div>
+          <span class="method-name">Wave</span>
+        </button>
+
+        <!-- Orange Money -->
+        <button class="method-btn" data-method="orange-money">
+          <div class="method-icon orange-icon">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="20" fill="#FF7900"/>
+              <text x="20" y="26" text-anchor="middle" fill="white" font-size="14" font-weight="bold">OM</text>
+            </svg>
+          </div>
+          <span class="method-name">Orange Money</span>
+        </button>
+
+        <!-- Free Money / Yas -->
+        <button class="method-btn" data-method="free-money">
+          <div class="method-icon free-icon">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="20" fill="#E6007E"/>
+              <text x="20" y="26" text-anchor="middle" fill="white" font-size="13" font-weight="bold">FM</text>
+            </svg>
+          </div>
+          <span class="method-name">Free Money</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 
+      =============================================
+      CHAMP TÉLÉPHONE
+      =============================================
+    -->
+    <div class="phone-section">
+      <label for="phoneNumber" class="phone-label">Numéro Mobile Money</label>
+      <div class="phone-input-wrapper">
+        <span class="phone-prefix">+221</span>
+        <input
+          type="tel"
+          id="phoneNumber"
+          class="phone-input"
+          placeholder="77 123 45 67"
+          inputmode="numeric"
+          autocomplete="tel"
+          maxlength="9"
+        >
+      </div>
+      <p class="phone-hint">Numéro associé à votre compte Wave, Orange ou Free</p>
+    </div>
+
+    <!-- 
+      =============================================
+      BOUTON PAIEMENT & STATUT
+      =============================================
+    -->
+    <button id="payBtn" class="pay-button">
+      <span class="btn-text">Payer maintenant</span>
+      <span class="spinner hidden"></span>
+    </button>
+
+    <div id="paymentStatus" class="status-message" role="alert" aria-live="polite"></div>
+
+    <p class="security-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Paiement traité par PayDunya
+    </p>
+  </main>
+
+  <script src="scripts/app.js"></script>
+</body>
+</html>
